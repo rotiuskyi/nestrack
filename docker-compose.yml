@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: nestrack_db_container
+    environment:
+      POSTGRES_DB: nestrack_db
+      POSTGRES_USER_FILE: /run/secrets/nestrack_db_user
+      POSTGRES_PASSWORD_FILE: /run/secrets/nestrack_db_pass
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    secrets:
+      - nestrack_db_user
+      - nestrack_db_pass
+
+volumes:
+  postgres_data:
+    driver: local
+
+secrets:
+  nestrack_db_user:
+    file: ./config/.nestrack_db_user
+  nestrack_db_pass:
+    file: ./config/.nestrack_db_pass

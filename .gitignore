@@ -35,7 +35,9 @@ lerna-debug.log*
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# dotenv environment variable files
+# config directory
+.nestrack_db_user
+.nestrack_db_pass
 .env
 .env.development.local
 .env.test.local
