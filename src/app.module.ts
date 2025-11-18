@@ -7,6 +7,7 @@ import { APP_INTERCEPTOR } from "@nestjs/core";
 import { UserProfilesModule } from "./user-profiles/user-profiles.module";
 import { AppLoggerInterceptor } from "./app-logger/app-logger.interceptor";
 import { AppController } from "./app.controller";
+import { AuthModule } from "./auth/auth.module";
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { AppController } from "./app.controller";
       inject: [ConfigService],
     }),
     UserProfilesModule,
+    AuthModule,
   ],
   providers: [
     {

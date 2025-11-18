@@ -10,6 +10,9 @@ export class UserProfile {
   login: string;
 
   @Property()
+  email: string;
+
+  @Property()
   password: string;
 
   @Property()
