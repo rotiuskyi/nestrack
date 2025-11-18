@@ -1,9 +1,9 @@
 import { Injectable } from "@nestjs/common";
+import { InjectRepository } from "@mikro-orm/nestjs";
+import { EntityManager, EntityRepository } from "@mikro-orm/core";
 import { CreateUserProfileDto } from "./dto/create-user-profile.dto";
 import { UpdateUserProfileDto } from "./dto/update-user-profile.dto";
 import { AuthService } from "../auth/auth.service";
-import { EntityManager, EntityRepository } from "@mikro-orm/core";
-import { InjectRepository } from "@mikro-orm/nestjs";
 import { UserProfile } from "./entities/user-profile.entity";
 
 @Injectable()
